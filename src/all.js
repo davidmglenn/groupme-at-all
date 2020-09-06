@@ -25,10 +25,11 @@ class AllBot {
     this.robot.brain.once("loaded", this.loadBlacklist.bind(this));
   }
 
-  beefResponse(res, first, last){
-    res.send(`${first}`);
+  beefResponse(res, name){
+    const names = name.split(" ");
+    res.send(`${names[0]}`);
     res.send(`comma big dick boy`);
-    res.send(`${last}`)
+    res.send(`${names[1]}`)
   }
   
   saveBlacklist() {
@@ -205,7 +206,7 @@ class AllBot {
     );
 
     // Mention @all command
-    this.robot.hear(/beefbot [a-zA-Z'.-]+ [a-zA-Z'.-]+/i, res => this.beefResponse(res, res.match[1], res.match[2]));
+    this.robot.hear(/beefbot (.+)/i, res => this.beefResponse(res, res.match[1]));
   }
 }
 
