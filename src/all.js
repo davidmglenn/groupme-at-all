@@ -25,6 +25,10 @@ class AllBot {
     this.robot.brain.once("loaded", this.loadBlacklist.bind(this));
   }
 
+  beefResponse(res){
+    res.send(`Beef!`);
+  }
+  
   saveBlacklist() {
     console.log("Saving blacklist");
     this.robot.brain.set("blacklist", this.blacklist);
@@ -199,7 +203,7 @@ class AllBot {
     );
 
     // Mention @all command
-    this.robot.hear(/(.*)@all(.*)/i, res => this.respondToAtAll(res));
+    this.robot.hear(/beefbot (.*)/i, res => this.beefResponse(res));
   }
 }
 
