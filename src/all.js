@@ -19,13 +19,40 @@ if (!room_id || !bot_id || !token) {
 class AllBot {
   constructor(robot) {
     this.robot = robot;
+    this.blacklist = [];
 
+    // Load the blacklist as soon as we can
+    this.robot.brain.once("loaded", this.loadBlacklist.bind(this));
   }
 
-  beefResponse(res){
-    res.send(`Test`);
+  saveBlacklist() {
+    console.log("Saving blacklist");
+    this.robot.brain.set("blacklist", this.blacklist);
+    this.robot.brain.save();
   }
-  
+
+  loadBlacklist() {
+    this.blacklist = this.robot.brain.get("blacklist");
+    if (this.blacklist) console.log("Blacklist loaded successfully.");
+    else console.warn("Failed to load blacklist.");
+  }
+
+  addToBlacklist(item) {
+    this.blacklist.push(item);
+    this.saveBlacklist();
+  }
+
+  removeFromBlacklist(item) {
+    let index = this.blacklist.indexOf(item);
+    if (index !== -1) {
+      this.blacklist.splice(index, 1);
+      this.saveBlacklist();
+      console.log(`Successfully removed ${item} from blacklist.`);
+    } else {
+      console.warn(`Unable to find ${item} in blacklist!`);
+    }
+  }
+
   getUserByName(_name) {
     let name = _name.trim();
     if (name[0] == "@") {
@@ -67,6 +94,38 @@ class AllBot {
     } else {
       res.send(`Could not find a user with the ID ${target}`);
     }
+  }
+
+  respondToViewBlacklist(res) {
+    // Raw blacklist
+    if (res.match[1]) return res.send(JSON.stringify(this.blacklist));
+
+    const blacklistNames = this.blacklist.map(
+      user => this.getUserById(user).name
+    );
+
+    if (blacklistNames.length > 0) return res.send(blacklistNames.join(", "));
+    else return res.send("There are currently no users blacklisted.");
+  }
+
+  respondToBlacklist(res, target) {
+    const user = this.getUserByName(target);
+
+    if (!user) return res.send(`Could not find a user with the name ${target}`);
+
+    console.log(`Blacklisting ${target}, ${user.user_id}`);
+    this.addToBlacklist(user.user_id);
+    res.send(`Blacklisted ${target} successfully.`);
+  }
+
+  respondToWhitelist(res, target) {
+    const user = this.getUserByName(target);
+
+    if (!user) return res.send(`Could not find a user with the name ${target}`);
+
+    console.log(`Whitelisting ${target}, ${user.user_id}`);
+    this.removeFromBlacklist(user.user_id);
+    res.send(`Whitelisted ${target} successfully`);
   }
 
   respondToAtAll(res) {
@@ -124,7 +183,23 @@ class AllBot {
 
   // Defines the main logic of the bot
   run() {
-    this.robot.hear(/(.*)@beefbot/i, res => this.beefResponse(res));
+    // Register listeners with hubot
+    this.robot.hear(/get id (.+)/i, res => this.respondToID(res, res.match[1]));
+    this.robot.hear(/get name (.+)/i, res =>
+      this.respondToName(res, res.match[1])
+    );
+    this.robot.hear(/view( raw)* blacklist/i, res =>
+      this.respondToViewBlacklist(res)
+    );
+    this.robot.hear(/blacklist (.+)/i, res =>
+      this.respondToBlacklist(res, res.match[1])
+    );
+    this.robot.hear(/whitelist (.+)/i, res =>
+      this.respondToWhitelist(res, res.match[1])
+    );
+
+    // Mention @all command
+    this.robot.hear(/(.*)@all(.*)/i, res => this.respondToAtAll(res));
   }
 }
 
