@@ -181,15 +181,14 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
-    
-    var names = name.split(" ");
+
     var printstring = "";
 
     for(index = 0; index < 5; ++index){
       entry = beefJson[index];
       printstring += entry.Player;
       printstring += " ";
-      printstring += entry.Forty
+      printstring += entry.Forty.toString();
       printstring += "\n"
     }
     res.send(`${printstring}`);    
