@@ -19,44 +19,33 @@ if (!room_id || !bot_id || !token) {
 class AllBot {
   constructor(robot) {
     this.robot = robot;
-    this.blacklist = [];
 
-    // Load the blacklist as soon as we can
-    this.robot.brain.once("loaded", this.loadBlacklist.bind(this));
   }
 
   beefResponse(res){
-  
+    const json = JSON.stringify("beefTest");
+    const groupmeAPIOptions = {
+      agent: false,
+      host: "api.groupme.com",
+      path: "/v3/bots/post",
+      port: 443,
+      method: "POST",
+      headers: {
+        "Content-Length": json.length,
+        "Content-Type": "application/json",
+        "X-Access-Token": token
+      }
+    };
+    const req = https.request(groupmeAPIOptions, response => {
+      let data = "";
+      response.on("data", chunk => (data += chunk));
+      response.on("end", () =>
+        console.log(`[GROUPME RESPONSE] ${response.statusCode} ${data}`)
+      );
+    });
+    req.end(json);
   }
   
-  saveBlacklist() {
-    console.log("Saving blacklist");
-    this.robot.brain.set("blacklist", this.blacklist);
-    this.robot.brain.save();
-  }
-
-  loadBlacklist() {
-    this.blacklist = this.robot.brain.get("blacklist");
-    if (this.blacklist) console.log("Blacklist loaded successfully.");
-    else console.warn("Failed to load blacklist.");
-  }
-
-  addToBlacklist(item) {
-    this.blacklist.push(item);
-    this.saveBlacklist();
-  }
-
-  removeFromBlacklist(item) {
-    let index = this.blacklist.indexOf(item);
-    if (index !== -1) {
-      this.blacklist.splice(index, 1);
-      this.saveBlacklist();
-      console.log(`Successfully removed ${item} from blacklist.`);
-    } else {
-      console.warn(`Unable to find ${item} in blacklist!`);
-    }
-  }
-
   getUserByName(_name) {
     let name = _name.trim();
     if (name[0] == "@") {
@@ -98,38 +87,6 @@ class AllBot {
     } else {
       res.send(`Could not find a user with the ID ${target}`);
     }
-  }
-
-  respondToViewBlacklist(res) {
-    // Raw blacklist
-    if (res.match[1]) return res.send(JSON.stringify(this.blacklist));
-
-    const blacklistNames = this.blacklist.map(
-      user => this.getUserById(user).name
-    );
-
-    if (blacklistNames.length > 0) return res.send(blacklistNames.join(", "));
-    else return res.send("There are currently no users blacklisted.");
-  }
-
-  respondToBlacklist(res, target) {
-    const user = this.getUserByName(target);
-
-    if (!user) return res.send(`Could not find a user with the name ${target}`);
-
-    console.log(`Blacklisting ${target}, ${user.user_id}`);
-    this.addToBlacklist(user.user_id);
-    res.send(`Blacklisted ${target} successfully.`);
-  }
-
-  respondToWhitelist(res, target) {
-    const user = this.getUserByName(target);
-
-    if (!user) return res.send(`Could not find a user with the name ${target}`);
-
-    console.log(`Whitelisting ${target}, ${user.user_id}`);
-    this.removeFromBlacklist(user.user_id);
-    res.send(`Whitelisted ${target} successfully`);
   }
 
   respondToAtAll(res) {
