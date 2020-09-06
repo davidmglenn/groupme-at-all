@@ -26,10 +26,7 @@ class AllBot {
   }
 
   beefResponse(res, name){
-    const names = name.split(" ");
-    res.send(`${names[0]}`);
-    res.send(`comma big dick boy`);
-    res.send(`${names[1]}`)
+    res.send(`${name}`);
   }
   
   saveBlacklist() {
