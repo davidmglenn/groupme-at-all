@@ -51,6 +51,19 @@ class AllBot {
     "Shuttle": 4.11
   },
   {
+    "Player": "Aaron Lockett",
+    "Year": 2021,
+    "Pos": "WR",
+    "Height": "5-7",
+    "Weight": 555,
+    "Forty": 3.31,
+    "Vertical": 99,
+    "BenchReps": "Empty!",
+    "Broad Jump": 119,
+    "Threecone": 6.84,
+    "Shuttle": 4.11
+  },
+  {
     "Player": "J.J. Nelson",
     "Year": 2015,
     "Pos": "WR",
