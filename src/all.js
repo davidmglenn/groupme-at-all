@@ -144,7 +144,7 @@ class AllBot {
 
   // Defines the main logic of the bot
   run() {
-    this.robot.hear(/(.*)@beefbot/i, res => this.beefResponse(res));
+    this.robot.hear(/(.*)@beefbot(.*)/i, res => this.beefResponse(res));
   }
 }
 
