@@ -23,27 +23,7 @@ class AllBot {
   }
 
   beefResponse(res){
-    const json = JSON.stringify("beefTest");
-    const groupmeAPIOptions = {
-      agent: false,
-      host: "api.groupme.com",
-      path: "/v3/bots/post",
-      port: 443,
-      method: "POST",
-      headers: {
-        "Content-Length": json.length,
-        "Content-Type": "application/json",
-        "X-Access-Token": token
-      }
-    };
-    const req = https.request(groupmeAPIOptions, response => {
-      let data = "";
-      response.on("data", chunk => (data += chunk));
-      response.on("end", () =>
-        console.log(`[GROUPME RESPONSE] ${response.statusCode} ${data}`)
-      );
-    });
-    req.end(json);
+    res.send(`Test`);
   }
   
   getUserByName(_name) {
@@ -144,7 +124,7 @@ class AllBot {
 
   // Defines the main logic of the bot
   run() {
-    this.robot.hear(/(.*)@beefbot(.*)/i, res => this.beefResponse(res));
+    this.robot.hear(/(.*)@beefbot/i, res => this.beefResponse(res));
   }
 }
 
