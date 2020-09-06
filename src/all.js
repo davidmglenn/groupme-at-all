@@ -197,14 +197,13 @@ class AllBot {
 
     var printstring = "";
 
-    for(index = 0; index < 5; ++index){
+    for(index = 0; index < beefJson.length; ++index){
       entry = beefJson[index];
-      printstring += entry.Player;
-      printstring += " ";
-      printstring += entry.Forty.toString();
-      printstring += "\n"
+      if(entry.Player === name.trim()){
+          res.send(`${index}`);  
+      }
     }
-    res.send(`${printstring}`);    
+    res.send(`bottom`);    
   }
   
   saveBlacklist() {
