@@ -25,8 +25,10 @@ class AllBot {
     this.robot.brain.once("loaded", this.loadBlacklist.bind(this));
   }
 
-  beefResponse(res, name){
-    res.send(`${name}`);
+  beefResponse(res, first, last){
+    res.send(`${first}`);
+    res.send(`comma big dick boy`);
+    res.send(`${last}`)
   }
   
   saveBlacklist() {
