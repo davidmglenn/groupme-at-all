@@ -204,7 +204,7 @@ class AllBot {
     );
 
     // Mention @all command
-    this.robot.hear(/beefbot (.+)/i, res => this.beefResponse(res, res.match[0], res.match[1]));
+    this.robot.hear(/beefbot (.+)/i, res => this.beefResponse(res, res.match[1], res.match[2]));
   }
 }
 
