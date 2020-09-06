@@ -89635,7 +89635,13 @@ class AllBot {
 ];
     
     var names = name.split(" ");
-    res.send(`${names[0]} comma big dick boy ${names[1]}`);
+
+    for(index = 0; index < beefJson.length; ++index){
+      entry = beefJson[index];
+      if(entry.Player === name){
+        res.send(`${names[0]} comma big dick boy ${names[1]} comma big dick boy 40 time ${entry.40YD}`);    
+      }
+    }
   }
   
   saveBlacklist() {
