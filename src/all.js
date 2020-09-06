@@ -25,6 +25,10 @@ class AllBot {
     this.robot.brain.once("loaded", this.loadBlacklist.bind(this));
   }
 
+  beefResponse(res){
+  
+  }
+  
   saveBlacklist() {
     console.log("Saving blacklist");
     this.robot.brain.set("blacklist", this.blacklist);
@@ -183,23 +187,7 @@ class AllBot {
 
   // Defines the main logic of the bot
   run() {
-    // Register listeners with hubot
-    this.robot.hear(/get id (.+)/i, res => this.respondToID(res, res.match[1]));
-    this.robot.hear(/get name (.+)/i, res =>
-      this.respondToName(res, res.match[1])
-    );
-    this.robot.hear(/view( raw)* blacklist/i, res =>
-      this.respondToViewBlacklist(res)
-    );
-    this.robot.hear(/blacklist (.+)/i, res =>
-      this.respondToBlacklist(res, res.match[1])
-    );
-    this.robot.hear(/whitelist (.+)/i, res =>
-      this.respondToWhitelist(res, res.match[1])
-    );
-
-    // Mention @all command
-    this.robot.hear(/(.*)@all(.*)/i, res => this.respondToAtAll(res));
+    this.robot.hear(/(.*)@beefbot/i, res => this.beefResponse(res));
   }
 }
 
