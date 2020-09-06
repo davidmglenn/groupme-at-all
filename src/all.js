@@ -26,7 +26,8 @@ class AllBot {
   }
 
   beefResponse(res, first, last){
-    res.send(`Beef!`);
+    const bigstring = first+last;
+    
     res.send(`${first} ${last}`);
   }
   
@@ -204,7 +205,7 @@ class AllBot {
     );
 
     // Mention @all command
-    this.robot.hear(/beefbot (.+)/i, res => this.beefResponse(res, res.match[1], res.match[2]));
+    this.robot.hear(/beefbot (.+) (.+)/i, res => this.beefResponse(res, res.match[1], res.match[2]));
   }
 }
 
