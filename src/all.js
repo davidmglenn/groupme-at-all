@@ -19,10 +19,6 @@ if (!room_id || !bot_id || !token) {
 class AllBot {
   constructor(robot) {
     this.robot = robot;
-    this.blacklist = [];
-
-    // Load the blacklist as soon as we can
-    this.robot.brain.once("loaded", this.loadBlacklist.bind(this));
   }
 
   beefResponse(res, name){
