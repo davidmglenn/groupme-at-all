@@ -22,6 +22,8 @@ class AllBot {
   }
 
   beefResponse(res, name){
+    var names = name.split(" ");
+    var twoNames = names[0] + " " + names[1];
     
     var beefJson = [
   {
@@ -194,8 +196,17 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
-    var entry = beefJson[4];
-    var printstring = entry.Player + " " + entry.Forty;
+    //var entry = beefJson[4];
+    //var printstring = entry.Player + " " + entry.Forty;
+    
+    for(i = 0; i < 5; i++){
+        var entry = beefJson[i];
+        if(entry.Player === twoNames){
+            res.send(`${entry.Player}`);         
+        }   
+    }
+    
+    
     res.send(`${printstring}`); 
   }
   
