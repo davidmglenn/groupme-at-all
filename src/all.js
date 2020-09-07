@@ -23,6 +23,8 @@ class AllBot {
 
   beefResponse(res, name){
     var names = name.split(" ");
+    var first = names[0];
+    var last = names[1];
     
     var beefJson = [
   {
@@ -195,9 +197,9 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
-    var printstring = "placeholder text";
+    var printstring = "placeholder text ${first} place2holder text ${last}";
     
-    for(i = beefJson.length - 6; i < beefJson.length; i++){
+    for(i = 9; i < beefJson.length; i++){
         printstring += beefJson[i].Player;
     }
        
