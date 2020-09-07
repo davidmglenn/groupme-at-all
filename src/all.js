@@ -200,12 +200,9 @@ class AllBot {
     
     for(i = 0; i < beefJson.length; i++){
         var entry = beefJson[i];
-        if(entry.Player == twoNames){
-            printstring += entry.Player;
-            printstring += " 40 yd dash: ";
-            printstring += entry.Forty;
-            printstring += " "
-        }   
+        printstring += entry.Player;
+        printstring += " 40 yard dash: ";
+        printstring += entry.Forty;
     }
        
     res.send(`${printstring}`); 
