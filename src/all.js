@@ -200,9 +200,6 @@ class AllBot {
     
     for(i = 0; i < beefJson.length; i++){
         var entry = beefJson[i];
-        printstring += entry.Player;
-        printstring += " 40 yard dash: ";
-        printstring += entry.Forty;
     }
        
     res.send(`${printstring}`); 
