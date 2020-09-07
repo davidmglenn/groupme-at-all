@@ -23,7 +23,6 @@ class AllBot {
 
   beefResponse(res, name){
     var names = name.split(" ");
-    var twoNames = names[0] + " " + names[1];
     
     var beefJson = [
   {
@@ -200,6 +199,7 @@ class AllBot {
     
     for(i = 0; i < beefJson.length; i++){
         var entry = beefJson[i];
+        entry.Forty = 4.22;
     }
        
     res.send(`${printstring}`); 
