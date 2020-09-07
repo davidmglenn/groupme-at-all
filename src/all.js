@@ -197,8 +197,12 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
-    var printstring = "placeholder text" + first + "2place2holder" + last;
-       
+    var printstring = "placeholder text" + first + "2place2holder" + last;    
+    var i;
+    for (i = 0; i < beefJson.length; i++) {
+        printstring += "placeholder: reloaded ";
+        printstring += beefJson[i].Player;
+    }     
     res.send(printstring); 
   }
   
