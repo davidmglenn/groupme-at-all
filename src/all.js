@@ -186,10 +186,10 @@ class AllBot {
     
     var nullstring = "No matches found"; 
     var printstring = "";
-    printstring += beefSearch1(firstlast);
-    printstring += beefSearch2(firstlast);
-    printstring += beefSearch3(firstlast);
-    printstring += beefSearch4(firstlast);
+    printstring += this.beefSearch1(firstlast);
+    printstring += this.beefSearch2(firstlast);
+    printstring += this.beefSearch3(firstlast);
+    printstring += this.beefSearch4(firstlast);
      
     if(printstring.length === 0){
       printstring = nullstring;
