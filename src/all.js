@@ -202,7 +202,7 @@ class AllBot {
     for(i = 0; i < 5; i++){
         var entry = beefJson[i];
         if(entry.Player === twoNames){
-            res.send(`${entry.Player}`);         
+            res.send(`${twoNames}`);         
         }   
     }
     
