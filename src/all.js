@@ -96666,7 +96666,7 @@ class AllBot {
     "School": "Alabama",
     "Height": "6-1",
     "Weight": 175,
-    "Forty": 4.58,
+    "Forty": "allegedly 4.58",
     "Vertical": 30,
     "BenchReps": 0,
     "BroadJump": "missing",
