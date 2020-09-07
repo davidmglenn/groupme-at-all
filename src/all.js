@@ -22,11 +22,6 @@ class AllBot {
   }
 
   beefResponse(res, name){
-    var names = name.split(" ");
-    var first = names[0];
-    var last = names[1];
-    var firstlast = first + " " + last;
-    
     var beefJson = [
   {
     "Player": "Brandon Banks",
@@ -198,26 +193,24 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
+    var names = name.split(" ");
+    var first = names[0];
+    var last = names[1];
+    var firstlast = first + " " + last;
     
-    var printstring = "placeholder text" + first + "2place2holder" + last + " aaaa ";    
-    var entry = beefJson[5];
-    var beefEntryName = entry.Player;
-    printstring += beefEntryName;
+    var printstring = "placeholdertextfornomatches "; 
     var i;
-    //for (i = 0; i < beefJson.length; i++) {
-    //    if(beefJson[i].Player == firstLast){
-    //        printstring = "inner p holder";
-    //    }
-    //}
-    //if(beefJson[5].Player === firstLast){
-    //  printstring += "you did it, you found the beef entry";   
-    //}
-    //else{
-    //  printstring += "no";
-    //}
-    if(beefEntryName === firstlast){
-        printstring += "oh yeah";
+    for (i = 0; i < beefJson.length; i++) {
+      var beefEntry = beefJson[i];
+      var beefEntryName = beefEntry.Player;
+      if(beefEntryName == firstlast){
+        printstring += firstlast;
+        printstring += " ";
+        printstring += "40 yard dash: ";
+        printstring += beefEntry.Forty;
+      }
     }
+    
     res.send(printstring); 
   }
   
