@@ -24,173 +24,354 @@ class AllBot {
   beefResponse(res, name){
     var beefJson = [
   {
-    "Player": "Brandon Banks",
     "Year": 2010,
+    "Player": "Brandon Banks",
     "Pos": "WR",
+    "School": "Kansas State",
     "Height": "5-7",
     "Weight": 149,
     "Forty": 4.37,
     "Vertical": 31,
-    "BenchReps": "Empty!",
-    "Broad Jump": 113,
+    "BenchReps": "missing",
+    "BroadJump": 113,
     "Threecone": 6.88,
     "Shuttle": 4.29
   },
   {
-    "Player": "Aaron Lockett",
     "Year": 2002,
+    "Player": "Aaron Lockett",
     "Pos": "WR",
+    "School": "Kansas State",
     "Height": "5-7",
     "Weight": 155,
     "Forty": 4.31,
     "Vertical": 35,
-    "BenchReps": "Empty!",
-    "Broad Jump": 119,
+    "BenchReps": "missing",
+    "BroadJump": 119,
     "Threecone": 6.84,
     "Shuttle": 4.11
   },
   {
-    "Player": "Aaron Lockett",
-    "Year": 2021,
-    "Pos": "WR",
-    "Height": "5-7",
-    "Weight": 555,
-    "Forty": 3.31,
-    "Vertical": 99,
-    "BenchReps": "Empty!",
-    "Broad Jump": 119,
-    "Threecone": 6.84,
-    "Shuttle": 4.11
-  },
-  {
-    "Player": "J.J. Nelson",
     "Year": 2015,
+    "Player": "J.J. Nelson",
     "Pos": "WR",
+    "School": "Ala-Birmingham",
     "Height": "5-10",
     "Weight": 156,
     "Forty": 4.28,
     "Vertical": 36,
-    "BenchReps": "Empty!",
-    "Broad Jump": 127,
+    "BenchReps": "missing",
+    "BroadJump": 127,
     "Threecone": 7.02,
     "Shuttle": 4.15
   },
   {
-    "Player": "Jovon Durante",
     "Year": 2019,
+    "Player": "Jovon Durante",
     "Pos": "WR",
+    "School": "Florida Atlantic",
     "Height": "5-11",
     "Weight": 160,
     "Forty": 4.55,
     "Vertical": 31.5,
-    "BenchReps": "Empty!",
-    "Broad Jump": 120,
+    "BenchReps": "missing",
+    "BroadJump": 120,
     "Threecone": 7,
     "Shuttle": 4.31
   },
   {
-    "Player": "Brandon Breazell",
     "Year": 2008,
+    "Player": "Brandon Breazell",
     "Pos": "WR",
+    "School": "UCLA",
     "Height": "6-0",
     "Weight": 160,
     "Forty": 4.41,
     "Vertical": 30.5,
-    "BenchReps": "Empty!",
-    "Broad Jump": 115,
+    "BenchReps": "missing",
+    "BroadJump": 115,
     "Threecone": 6.97,
-    "Shuttle": "Empty!"
+    "Shuttle": "missing"
   },
   {
-    "Player": "Tevin Reese",
     "Year": 2014,
+    "Player": "Tevin Reese",
     "Pos": "WR",
+    "School": "Baylor",
     "Height": "5-10",
     "Weight": 163,
     "Forty": 4.46,
     "Vertical": 41,
-    "BenchReps": "Empty!",
-    "Broad Jump": 132,
+    "BenchReps": "missing",
+    "BroadJump": 132,
     "Threecone": 6.63,
     "Shuttle": 4.18
   },
   {
-    "Player": "Cairo Santos",
     "Year": 2014,
+    "Player": "Cairo Santos",
     "Pos": "K",
+    "School": "Tulane",
     "Height": "5-8",
     "Weight": 164,
     "Forty": 4.76,
-    "Vertical": "Empty!",
-    "BenchReps": "Empty!",
-    "Broad Jump": "Empty!",
-    "Threecone": "Empty!",
-    "Shuttle": "Empty!"
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
   },
   {
-    "Player": "Jalen Saunders",
     "Year": 2014,
+    "Player": "Jalen Saunders",
     "Pos": "WR",
+    "School": "Oklahoma",
     "Height": "5-9",
     "Weight": 165,
     "Forty": 4.44,
     "Vertical": 34,
-    "BenchReps": "Empty!",
-    "Broad Jump": 122,
-    "Threecone": "Empty!",
-    "Shuttle": "Empty!"
+    "BenchReps": "missing",
+    "BroadJump": 122,
+    "Threecone": "missing",
+    "Shuttle": "missing"
   },
   {
-    "Player": "Trindon Holliday",
     "Year": 2010,
+    "Player": "Trindon Holliday",
     "Pos": "WR",
+    "School": "LSU",
     "Height": "5-5",
     "Weight": 166,
     "Forty": 4.34,
     "Vertical": 42,
     "BenchReps": 10,
-    "Broad Jump": 116,
+    "BroadJump": 116,
     "Threecone": 6.54,
     "Shuttle": 4.48
   },
   {
-    "Player": "Marquise Brown",
     "Year": 2019,
+    "Player": "Marquise Brown",
     "Pos": "WR",
+    "School": "Oklahoma",
     "Height": "5-9",
     "Weight": 166,
-    "Forty": "Empty!",
-    "Vertical": "Empty!",
-    "BenchReps": "Empty!",
-    "Broad Jump": "Empty!",
-    "Threecone": "Empty!",
-    "Shuttle": "Empty!"
+    "Forty": "missing",
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
   },
   {
-    "Player": "Jake Elliott",
     "Year": 2017,
+    "Player": "Jake Elliott",
     "Pos": "K",
+    "School": "Memphis",
     "Height": "5-9",
     "Weight": 167,
     "Forty": 4.79,
-    "Vertical": "Empty!",
-    "BenchReps": "Empty!",
-    "Broad Jump": "Empty!",
-    "Threecone": "Empty!",
-    "Shuttle": "Empty!"
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
   },
   {
-    "Player": "Mike Williams",
-    "Year": 2002,
-    "Pos": "OT",
-    "Height": "6-6",
-    "Weight": 375,
-    "Forty": 5.3,
-    "Vertical": 30,
-    "BenchReps": 29,
-    "Broad Jump": 102,
-    "Threecone": "Empty!",
-    "Shuttle": "Empty!"
+    "Year": 2000,
+    "Player": "Kyle Atteberry",
+    "Pos": "K",
+    "School": "Baylor",
+    "Height": "6-0",
+    "Weight": 167,
+    "Forty": "missing",
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2001,
+    "Player": "Arnold Jackson",
+    "Pos": "WR",
+    "School": "Louisville",
+    "Height": "5-8",
+    "Weight": 167,
+    "Forty": 4.48,
+    "Vertical": 41,
+    "BenchReps": "missing",
+    "BroadJump": 127,
+    "Threecone": 7.42,
+    "Shuttle": 4.11
+  },
+  {
+    "Year": 2013,
+    "Player": "Onterio McCalebb",
+    "Pos": "RB",
+    "School": "Auburn",
+    "Height": "5-10",
+    "Weight": 168,
+    "Forty": 4.34,
+    "Vertical": 34,
+    "BenchReps": "missing",
+    "BroadJump": 121,
+    "Threecone": "missing",
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2005,
+    "Player": "Roscoe Parrish",
+    "Pos": "WR",
+    "School": "Miami (FL)",
+    "Height": "5-10",
+    "Weight": 168,
+    "Forty": 4.37,
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2005,
+    "Player": "Cedrick Williams",
+    "Pos": "CB",
+    "School": "Kansas State",
+    "Height": "5-10",
+    "Weight": 168,
+    "Forty": 4.5,
+    "Vertical": 35,
+    "BenchReps": 13,
+    "BroadJump": 121,
+    "Threecone": 7.24,
+    "Shuttle": 4.22
+  },
+  {
+    "Year": 2013,
+    "Player": "Nickell Robey",
+    "Pos": "CB",
+    "School": "USC",
+    "Height": "5-7",
+    "Weight": 169,
+    "Forty": 4.53,
+    "Vertical": 37.5,
+    "BenchReps": 10,
+    "BroadJump": 127,
+    "Threecone": 6.74,
+    "Shuttle": 4.09
+  },
+  {
+    "Year": 2008,
+    "Player": "DeSean Jackson",
+    "Pos": "WR",
+    "School": "California",
+    "Height": "5-10",
+    "Weight": 169,
+    "Forty": 4.35,
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": 120,
+    "Threecone": "missing",
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2003,
+    "Player": "Shaun McDonald",
+    "Pos": "WR",
+    "School": "Arizona State",
+    "Height": "5-8",
+    "Weight": 169,
+    "Forty": 4.43,
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2019,
+    "Player": "Hamp Cheevers",
+    "Pos": "CB",
+    "School": "Boston Col.",
+    "Height": "5-9",
+    "Weight": 169,
+    "Forty": 4.52,
+    "Vertical": 39,
+    "BenchReps": 8,
+    "BroadJump": 122,
+    "Threecone": 6.96,
+    "Shuttle": 4.25
+  },
+  {
+    "Year": 2000,
+    "Player": "Todd Pinkston",
+    "Pos": "WR",
+    "School": "Southern Miss",
+    "Height": "6-2",
+    "Weight": 169,
+    "Forty": 4.45,
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2009,
+    "Player": "Bruce Johnson",
+    "Pos": "CB",
+    "School": "Miami (FL)",
+    "Height": "5-9",
+    "Weight": 170,
+    "Forty": 4.42,
+    "Vertical": 34.5,
+    "BenchReps": 6,
+    "BroadJump": 125,
+    "Threecone": 6.71,
+    "Shuttle": 4.05
+  },
+  {
+    "Year": 2008,
+    "Player": "Anthony Alridge",
+    "Pos": "RB",
+    "School": "Houston",
+    "Height": "5-9",
+    "Weight": 170,
+    "Forty": 4.36,
+    "Vertical": 30.5,
+    "BenchReps": "missing",
+    "BroadJump": 134,
+    "Threecone": 6.88,
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2020,
+    "Player": "Jeff Thomas",
+    "Pos": "WR",
+    "School": "Miami",
+    "Height": "5-9",
+    "Weight": 170,
+    "Forty": 4.45,
+    "Vertical": 36.5,
+    "BenchReps": "missing",
+    "BroadJump": 125,
+    "Threecone": "missing",
+    "Shuttle": "missing"
+  },
+  {
+    "Year": 2008,
+    "Player": "Alexis Serna",
+    "Pos": "K",
+    "School": "Oregon State",
+    "Height": "5-6",
+    "Weight": 170,
+    "Forty": 4.62,
+    "Vertical": "missing",
+    "BenchReps": "missing",
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
   }
 ];
     var names = name.split(" ");
@@ -198,7 +379,8 @@ class AllBot {
     var last = names[1];
     var firstlast = first + " " + last;
     
-    var printstring = "placeholdertextfornomatches "; 
+    var nullString = "No matches found"; 
+    var printstring = "";
     var i;
     for (i = 0; i < beefJson.length; i++) {
       var beefEntry = beefJson[i];
@@ -206,8 +388,28 @@ class AllBot {
       if(beefEntryName == firstlast){
         printstring += firstlast;
         printstring += " ";
-        printstring += "40 yard dash: ";
+        printstring += beefEntry.Year;
+        printstring += " ";
+        printstring += beefEntry.Pos;
+        printstring += " from ";
+        printstring += beefEntry.School;
+        printstring += ".";
+        printstring += " Height: ";
+        printstring += beefEntry.Height;
+        printstring += " Weight: ";
+        printstring += beefEntry.Weight;
+        printstring += " 40 yard dash: ";
         printstring += beefEntry.Forty;
+        printstring += " Vertical: ";
+        printstring += beefEntry.Vertical;
+        printstring += " Bench Reps: ";
+        printstring += beefEntry.BenchReps;
+        printstring += " Broad Jump: ";
+        printstring += beefEntry.BroadJump;
+        printstring += " Three Cone: ";
+        printstring += beefEntry.Threecone;
+        printstring += " Shuttle: ";
+        printstring += beefEntry.Shuttle;
       }
     }
     
