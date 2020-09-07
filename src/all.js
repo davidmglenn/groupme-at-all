@@ -197,9 +197,8 @@ class AllBot {
 ];
     var printstring = "placeholder text";
     
-    for(i = 0; i < beefJson.length; i++){
-        var entry = beefJson[i];
-        entry.Forty = 4.22;
+    for(i = beefJson.length - 6; i < beefJson.length; i++){
+        printstring += beefJson[i].Player;
     }
        
     res.send(`${printstring}`); 
