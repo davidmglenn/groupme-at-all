@@ -96531,7 +96531,7 @@ class AllBot {
     var last = names[1];
     var firstlast = first + " " + last;
     
-    var nullString = "No matches found"; 
+    var nullstring = "No matches found"; 
     var printstring = "";
     var i;
     for (i = 0; i < beefJson.length; i++) {
@@ -96564,7 +96564,9 @@ class AllBot {
         printstring += beefEntry.Shuttle;
       }
     }
-    
+    if(printstring.length === 0){
+      printstring = nullstring;
+    }
     res.send(printstring); 
   }
   
