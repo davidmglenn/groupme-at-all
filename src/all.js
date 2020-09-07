@@ -196,17 +196,18 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
-    //var entry = beefJson[4];
-    //var printstring = entry.Player + " " + entry.Forty;
+    var printstring = "placeholder text";
     
-    for(i = 0; i < 5; i++){
+    for(i = 0; i < beefJson.length; i++){
         var entry = beefJson[i];
-        if(entry.Player === twoNames){
-            res.send(`${twoNames}`);         
+        if(entry.Player == twoNames){
+            printstring += entry.Player;
+            printstring += " 40 yd dash: ";
+            printstring += entry.Forty;
+            printstring += " "
         }   
     }
-    
-    
+       
     res.send(`${printstring}`); 
   }
   
