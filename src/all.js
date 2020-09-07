@@ -96658,6 +96658,20 @@ class AllBot {
     "BroadJump": 92,
     "Threecone": 8.09,
     "Shuttle": 5
+  },
+  {
+    "Year": 2020,
+    "Player": "Dimitri Adams",
+    "Pos": "Toilet Champion",
+    "School": "Alabama",
+    "Height": "6-1",
+    "Weight": 175,
+    "Forty": 4.58,
+    "Vertical": 30,
+    "BenchReps": 0,
+    "BroadJump": "missing",
+    "Threecone": "missing",
+    "Shuttle": "missing"
   }
 ];
     var beefEntry;
