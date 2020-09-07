@@ -198,6 +198,7 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
+    
     var printstring = "placeholder text" + first + "2place2holder" + last;    
     var i;
     //for (i = 0; i < beefJson.length; i++) {
@@ -209,7 +210,7 @@ class AllBot {
       printstring += "you did it, you found the beef entry";   
     }
     else{
-      printstring += "no"
+      printstring += "no";
     }
     res.send(printstring); 
   }
