@@ -25,6 +25,7 @@ class AllBot {
     var names = name.split(" ");
     var first = names[0];
     var last = names[1];
+    var firstlast = first + " " + last;
     
     var beefJson = [
   {
@@ -200,8 +201,9 @@ class AllBot {
     var printstring = "placeholder text" + first + "2place2holder" + last;    
     var i;
     for (i = 0; i < beefJson.length; i++) {
-        printstring += "placeholder: reloaded ";
-        printstring += beefJson[i].Player;
+        if(beefJson[i].Player == firstLast){
+            printstring = "inner p holder";
+        }
     }     
     res.send(printstring); 
   }
