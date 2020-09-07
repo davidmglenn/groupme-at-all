@@ -201,7 +201,8 @@ class AllBot {
     
     var printstring = "placeholder text" + first + "2place2holder" + last + " aaaa ";    
     var entry = beefJson[5];
-    printstring += entry.Player;
+    var beefEntryName = entry.Player;
+    printstring += beefEntryName;
     var i;
     //for (i = 0; i < beefJson.length; i++) {
     //    if(beefJson[i].Player == firstLast){
@@ -214,6 +215,9 @@ class AllBot {
     //else{
     //  printstring += "no";
     //}
+    if(beefEntryName === firstlast){
+        printstring += "oh yeah";
+    }
     res.send(printstring); 
   }
   
