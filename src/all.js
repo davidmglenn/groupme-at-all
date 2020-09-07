@@ -199,19 +199,21 @@ class AllBot {
   }
 ];
     
-    var printstring = "placeholder text" + first + "2place2holder" + last;    
+    var printstring = "placeholder text" + first + "2place2holder" + last + " aaaa ";    
+    var entry = beefJson[5];
+    printstring += entry.Player;
     var i;
     //for (i = 0; i < beefJson.length; i++) {
     //    if(beefJson[i].Player == firstLast){
     //        printstring = "inner p holder";
     //    }
     //}
-    if(beefJson[5].Player === firstLast){
-      printstring += "you did it, you found the beef entry";   
-    }
-    else{
-      printstring += "no";
-    }
+    //if(beefJson[5].Player === firstLast){
+    //  printstring += "you did it, you found the beef entry";   
+    //}
+    //else{
+    //  printstring += "no";
+    //}
     res.send(printstring); 
   }
   
