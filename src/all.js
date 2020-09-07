@@ -197,13 +197,13 @@ class AllBot {
     "Shuttle": "Empty!"
   }
 ];
-    var printstring = "placeholder text ${first} place2holder text ${last}";
+    var printstring = "placeholder text" + first + "2place2holder" + last;
     
     for(i = 9; i < beefJson.length; i++){
         printstring += beefJson[i].Player;
     }
        
-    res.send(`${printstring}`); 
+    res.send(printstring); 
   }
   
   saveBlacklist() {
