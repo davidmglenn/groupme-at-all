@@ -198,10 +198,6 @@ class AllBot {
   }
 ];
     var printstring = "placeholder text" + first + "2place2holder" + last;
-    
-    for(i = 9; i < beefJson.length; i++){
-        printstring += beefJson[i].Player;
-    }
        
     res.send(printstring); 
   }
