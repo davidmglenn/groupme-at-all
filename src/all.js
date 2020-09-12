@@ -95,7 +95,7 @@ class AllBot {
   },
   {
     "Year": 2008,
-    "Player": "Tareq Nebhan",
+    "Player": "Tareq Nabhan",
     "Pos": "OD",
     "School": "Pittsburg State",
     "Height": "6-0",
